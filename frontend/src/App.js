@@ -1,25 +1,75 @@
-import React from "react";
-import logo from "./logo.svg";
-import BusinessMember from "./components/BusinessMember";
+import React, { useState } from "react";
 import "./App.css";
+import Form from "./components/Form";
+import BusinessMember from "./components/BusinessMember";
 
 function App() {
+  const [businessMembers, setBusinessMembers] = useState([]);
+  const [updatedMember, setUpdatedMember] = useState({
+    name: "",
+    email: ""
+  });
+  const [memberEdit, setMemberEdit] = useState("");
+  let newMember = [
+    // ...updatedMember,
+    // [event.target.name]: event.target.value
+  ];
+
+  function handleChange(event) {
+    // setTeamMembers(newMember);
+    console.log(businessMembers);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(event.target.name.value, event.target.email.value);
+    newMember.push(
+      `Name: ${event.target.name.value},Email: ${event.target.email.value}`
+    );
+    setBusinessMembers(businessMembers.concat(newMember));
+  }
+
+  function handleEdit(event) {
+    event.preventDefault();
+    let edit = `edit: ${event.target.value}`;
+    console.log(edit);
+    setMemberEdit(edit);
+  }
+
+  console.log(businessMembers);
+  // setBusinessMembers(newMember);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="form-group">
+      <h1 className="form">Businesses/ Donors</h1>
+      <Form
+        businessMembers={businessMembers}
+        setBusinessMembers={setBusinessMembers}
+        updatedMember={updatedMember}
+        setUpdateMember={setUpdatedMember}
+        memberEdit={memberEdit}
+        setMemberEdit={setMemberEdit}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        handleEdit={handleEdit}
+      />
+      <div className="form-group">
+        {businessMembers.map(member => {
+          return (
+            <BusinessMember
+              businessMembers={businessMembers}
+              setBusinessMembers={setBusinessMembers}
+              updatedMember={updatedMember}
+              setUpdateMember={setUpdatedMember}
+              memberEdit={memberEdit}
+              setMemberEdit={setMemberEdit}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              handleEdit={handleEdit}
+              // edit={setMemberEdit}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
