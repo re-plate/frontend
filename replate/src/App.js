@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import VolunteerForm from './components/VolunteerForm';
+import Header from './components/Header';
 
 function App() {
   const [volunteerArray, setVolunteerArray] = useState([
@@ -30,7 +31,7 @@ function App() {
   
   return (
     <div className = "App">
-      <button className="requestButton">View open requests</button>
+      <Header />
       <VolunteerForm 
         volunteers = {volunteerArray} 
         addToVolunteers={addToVolunteers}
