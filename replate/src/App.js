@@ -1,45 +1,54 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import VolunteerForm from './components/VolunteerForm';
 
 function App() {
-  const [teamArray, setTeamArray] = useState([
-    {id: "1", name: "Scooby Doo",email: "woof@gmail.com",requests: "...",imgUrl:"https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/20992941_10156238556155961_119237620566999832_n.jpg?_nc_cat=1&_nc_oc=AQl1EFkKWnp4l9SRuNIQaRVkxAF_PjNwnpTd0ykobscIw61sB2XFzUf4rjYflhOHuwA&_nc_ht=scontent-dfw5-1.xx&oh=4a564cede59d7d420c752712f701cce8&oe=5DA3195E"},
+  const [volunteerArray, setVolunteerArray] = useState([
+    {id: "1", name: "SpongeBob",email: "cook@krustykrab.com",requests: "...",imgUrl:"https://vignette.wikia.nocookie.net/spongebob/images/d/d7/SpongeBob_stock_art.png/revision/latest?cb=20190604110949"},
   ]);
 
   const [idCount, setIdCount] = useState(3);
-  const [memberToEdit, switchEditMember] = useState();
+  const [volunteerToEdit, switchEditVolunteer] = useState();
   const [isEditing, setEdit] = useState(false);
   
-  const addToMembers = member => {
+  const addToVolunteers = volunteer => {
     isEditing
-      ? setTeamArray(member)
-      : setTeamArray([...teamArray, { ...member, id: idCount }]);
+      ? setVolunteerArray(volunteer)
+      : setVolunteerArray([...volunteerArray, { ...volunteer, id: idCount }]);
   };
 
   const editTrue = id => {
     setEdit(true);
-    switchEditMember(id);
+    switchEditVolunteer(id);
   };
 
   const editFalse = () => {
     setEdit(false);
-    switchEditMember(null);
+    switchEditVolunteer(null);
   };
   
   
   return (
     <div className = "App">
       <button className="requestButton">View open requests</button>
-      {teamArray.map((member) => 
+      <VolunteerForm 
+        volunteers = {volunteerArray} 
+        addToVolunteers={addToVolunteers}
+        idCount={idCount}
+        setIdCount={setIdCount}
+        volunteerToEdit={volunteerToEdit}
+        isEditing={isEditing}
+        editFalse={editFalse}
+        />
+      {volunteerArray.map((volunteer) => 
             <div className = "card">
-            <img src={member.imgUrl}/>
+            <img src={volunteer.imgUrl}/>
             <div className = "textContainer">
-              <h1>{member.name}</h1>
-              <p>{member.email}</p>
-              <p>{member.requests}</p>
+              <h1>{volunteer.name}</h1>
+              <p>{volunteer.email}</p>
+              <p>{volunteer.requests}</p>
             </div>
-            <button className="editButton" onClick={() => editTrue(member.id)}>Edit</button>
+            <button className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</button>
           </div>
         )}
         <button className="requestButton">View open requests</button>
