@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import VolunteerForm from './components/VolunteerForm';
 import Header from './components/Header';
+import {VolunteerImage} from "./components/StyledWidgets";
+import table from './assets/table.jpg';
 
 function App() {
   const [volunteerArray, setVolunteerArray] = useState([
@@ -32,7 +34,8 @@ function App() {
   return (
     <div className = "App">
       <Header />
-      <VolunteerForm 
+      <VolunteerImage src = {table} alt = "Photo by Ali Inay on Unsplash"/>
+      <VolunteerForm
         volunteers = {volunteerArray} 
         addToVolunteers={addToVolunteers}
         idCount={idCount}

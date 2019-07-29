@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import {SubmitButton} from "./StyledWidgets";
+
 
 const VolunteerForm= ({
     volunteers,
@@ -43,9 +45,9 @@ const VolunteerForm= ({
           }, [isEditing, volunteers, volunteerToEdit]);
 
           return (
-            <form onSubmit={isEditing ? editHandler : submitHandler}>
+            <form className = 'volunteerForm' onSubmit={isEditing ? editHandler : submitHandler}>
               <fieldset>
-                <legend>Add Volunteer</legend>
+                <legend>Sign up to Volunteer</legend>
                 <div className="form-group row">
                   <label for="name" className="col-sm-2 col-form-label">
                     Name
@@ -84,9 +86,9 @@ const VolunteerForm= ({
                     value={volunteer.imgUrl}
                   />
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <SubmitButton>
                   Submit
-                </button>
+                </SubmitButton>
               </fieldset>
             </form>
           );
