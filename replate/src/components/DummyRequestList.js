@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
-const DummyRequestList = () => {
+const DummyRequestList = ({showList}) => {
   const [requests, setRequests] = useState([
     {id: "1",title:"Help!",author: "Me",date:"7/30/2019",info:"this is a test"},
     {id: "2", title:"Help 2!",author: "Me",date:"7/30/2019",info:"this is a second test"},
   ]);
 
 
-  
-  return (
-    <div className="request-list">
-      {requests.map(request => (
-        <RequestDetails key={request.id} request={request} />
-      ))}
-    </div>
-  );
+  if(showList) {
+    return (
+        <div className="request-list">
+          {requests.map(request => (
+            <RequestDetails key={request.id} request={request} />
+          ))}
+        </div>
+      );
+  }
+  else {
+      return null;
+  }
+
+
 }
 
 function RequestDetails({ request }) {

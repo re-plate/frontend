@@ -42,7 +42,7 @@ function App() {
     return matches[0] ? null : setSavedList([...savedList, request])
   };
 
-  const [showList, setShowList] = ShowList();
+  const [showList, setShowList] = useState(false);
   const toggleMode = e => {
     e.preventDefault();
     setShowList(!showList);
@@ -77,7 +77,7 @@ function App() {
        </div>
       )}
       <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
-      <Route path="/requests" exact component={DummyRequestList} />
+      <Route path="/requests" exact render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
       <Route
         path ="/requests/:id"
         render={props => (
