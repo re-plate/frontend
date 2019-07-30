@@ -9,10 +9,11 @@
   width: 100%;
 }
 
-.header h1 {
+h1 {
   font-family: 'Eczar', serif;
   font-weight: 800;
   color: #4B5B41;
+  margin-bottom: 0rem;
 }
 
 .volunteerForm{
@@ -53,4 +54,42 @@ input {
 
 fieldset {
   width: 95%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D9CBB0;
+  
+}
+
+.volunteerCard {
+  width: 80%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.volunteerCard img {
+  width: 20%;
+  height: auto;
+}
+
+.volunteerCard .textContainer {
+  width: 50%;
+  text-align: left;
+  margin-left: 1.5rem;
+  
+}
+
+.editButton {
+  height: 4rem;
+  width: 20%;
+
 }

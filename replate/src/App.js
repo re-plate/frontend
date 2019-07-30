@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import VolunteerForm from './components/VolunteerForm';
 import Header from './components/Header';
-import {VolunteerImage} from "./components/StyledWidgets";
+import {VolunteerImage, SubmitButton, RequestButton} from "./components/StyledWidgets";
 import table from './assets/table.jpg';
 
 function App() {
@@ -44,19 +44,21 @@ function App() {
         isEditing={isEditing}
         editFalse={editFalse}
         />
-      {volunteerArray.map((volunteer) => 
-            <div className = "card">
-            <img src={volunteer.imgUrl}/>
-            <div className = "textContainer">
-              <h1>{volunteer.name}</h1>
-              <p>{volunteer.email}</p>
-              <p>{volunteer.requests}</p>
-            </div>
-            <button className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</button>
+      <div className = "container">
+        <h1>Meet our Volunteers</h1>
+      {volunteerArray.map((volunteer) =>
+        <div className = "volunteerCard">
+          <img src={volunteer.imgUrl}/>
+          <div className = "textContainer">
+            <h2>{volunteer.name}</h2>
+            <p>{volunteer.email}</p>
+            <p>{volunteer.requests}</p>
           </div>
-        )}
-        <button className="requestButton">View open requests</button>
-
+           <SubmitButton className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</SubmitButton>
+       </div>
+      )}
+      <RequestButton className="requestButton">View open requests</RequestButton>
+    </div>
     </div>
 
   ); 
