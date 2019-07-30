@@ -8,6 +8,7 @@ import table from './assets/table.jpg';
 import SavedList from './components/SavedList';
 import DummyRequestList from './components/DummyRequestList';
 import DummyRequest from './components/DummyRequest'
+import ShowList from './hooks/ShowList';
 
 function App() {
   const [volunteerArray, setVolunteerArray] = useState([
@@ -41,7 +42,12 @@ function App() {
     return matches[0] ? null : setSavedList([...savedList, request])
   };
 
-  
+  const [showList, setShowList] = ShowList();
+  const toggleMode = e => {
+    e.preventDefault();
+    setShowList(!showList);
+  };
+
   
   return (
     <div className = "App">
@@ -57,17 +63,6 @@ function App() {
         editFalse={editFalse}
         />
       <div className = "container">   
-      <Route path="/requests" exact component={DummyRequestList} />
-      <Route
-        path ="/requests/:id"
-        render={props => (
-          <DummyRequest
-            {...props}
-            addToSavedList={addToSavedList}
-            list={savedList}
-          />
-        )}
-        /> 
         <h1>Meet our Volunteers</h1>
       {volunteerArray.map((volunteer) =>
         <div className = "volunteerCard">
@@ -81,7 +76,18 @@ function App() {
            <SubmitButton className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</SubmitButton>
        </div>
       )}
-      <RequestButton className="requestButton">View open requests</RequestButton>
+      <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
+      <Route path="/requests" exact component={DummyRequestList} />
+      <Route
+        path ="/requests/:id"
+        render={props => (
+          <DummyRequest 
+            {...props}
+            addToSavedList={addToSavedList}
+            list={savedList}
+          />
+        )}
+        /> 
     </div>
     </div>
 
