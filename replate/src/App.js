@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import { Route } from "react-router-dom";
 import './App.css';
 import VolunteerForm from './components/VolunteerForm';
 import Header from './components/Header';
 import {VolunteerImage, SubmitButton, RequestButton} from "./components/StyledWidgets";
 import table from './assets/table.jpg';
+import SavedList from './components/SavedList';
+import DummyRequestList from './components/DummyRequestList';
+import DummyRequest from './components/DummyRequest'
 
 function App() {
   const [volunteerArray, setVolunteerArray] = useState([
     {id: "1", name: "SpongeBob",email: "cook@krustykrab.com",requests: "...",imgUrl:"https://vignette.wikia.nocookie.net/spongebob/images/d/d7/SpongeBob_stock_art.png/revision/latest?cb=20190604110949"},
-  ]);
+    {id: "12", name: "Patrick",email: "thisispatrick@krustykrab.com",requests: "...",imgUrl:"https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/220px-Patrick_Star.svg.png"},]);
 
   const [idCount, setIdCount] = useState(2);
   const [volunteerToEdit, switchEditVolunteer] = useState();
@@ -29,6 +33,14 @@ function App() {
     setEdit(false);
     switchEditVolunteer(null);
   };
+
+  const [savedList, setSavedList] = useState( [] );
+
+  const addToSavedList = (request) => {
+    let matches = savedList.filter(req => req.id === request.id)
+    return matches[0] ? null : setSavedList([...savedList, request])
+  };
+
   
   
   return (
@@ -44,7 +56,18 @@ function App() {
         isEditing={isEditing}
         editFalse={editFalse}
         />
-      <div className = "container">
+      <div className = "container">   
+      <Route path="/requests" exact component={DummyRequestList} />
+      <Route
+        path ="/requests/:id"
+        render={props => (
+          <DummyRequest
+            {...props}
+            addToSavedList={addToSavedList}
+            list={savedList}
+          />
+        )}
+        /> 
         <h1>Meet our Volunteers</h1>
       {volunteerArray.map((volunteer) =>
         <div className = "volunteerCard">
@@ -53,6 +76,7 @@ function App() {
             <h2>{volunteer.name}</h2>
             <p>{volunteer.email}</p>
             <p>{volunteer.requests}</p>
+            <SavedList list={savedList} /> 
           </div>
            <SubmitButton className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</SubmitButton>
        </div>
