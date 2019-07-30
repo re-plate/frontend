@@ -4,7 +4,7 @@ const Form = props => {
   return (
     <div>
       <button onClick={props.handleEdit}> edit </button>
-      <label>edit</label>
+      <label>To make edits: </label>
       <input type="text" name="edit" />
       <div className="form-container">
         <form onSubmit={props.handleSubmit}>
