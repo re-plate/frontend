@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
+import "../App.css";
 
 const Form = props => {
   return (
     <div>
-      <button onClick={props.handleEdit}> edit </button>
-      <label>To make edits: </label>
-      <input type="text" name="edit" />
       <div className="form-container">
+        <button className="editButton" onClick={props.handleEdit}>
+          Edit
+        </button>
+        <label>To make edits: </label>
+
+        <input type="text" name="edit" />
         <form onSubmit={props.handleSubmit}>
-          <h1>Donor Sign Up</h1>
+          <legend>Donor Sign Up</legend>
           <label>Company Name</label>
           <input type="text" name="company name" required />
           <label>Company Contact Name</label>

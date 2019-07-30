@@ -1,37 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -68,6 +34,7 @@ label {
 legend {
   font-size: 28px;
   color: #4b5b41;
+  justify-content: center;
 }
 
 input {
@@ -82,47 +49,147 @@ input {
   border-radius: 8px;
 }
 
-fieldset {
-  width: 95%;
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #d9cbb0;
-  padding: 1.5rem;
+.form-container {
+  background: #d9cbb0;
 }
 
 .form-group {
-  width: 80%;
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  margin: 1.5rem;
-  font-family: "Montserrat", sans-serif;
-  padding: 1.5rem;
-}
-
-.form-group img {
-  width: 20%;
+  width: 0 auto;
   height: auto;
 }
 
-.form-group .textContainer {
+.form-group .formContainer {
   width: 50%;
   text-align: left;
   margin-left: 1.5rem;
 }
 
 .editButton {
-  height: 4rem;
-  width: 20%;
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border: none;
+  text-decoration: none;
+  background-color: red;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background: #0e535e;
+}
+nav .dropdown {
+  overflow: hidden;
+}
+@media (min-width: 501px) {
+  nav .dropdown:hover .dropContent {
+    display: flex;
+    flex-direction: column;
+    font-family: "Eczar", serif;
+    font-size: 2.8rem;
+  }
+}
+nav .dropdown .dropContent {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  nav .dropdown .dropContent {
+    position: static;
+  }
+}
+nav .dropdown .dropContent a {
+  background: #0e535e;
+  color: #d9cbb0;
+  padding: 2rem 4rem;
+  margin-left: 10rem;
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  nav .dropdown .dropContent a {
+    padding: 0 0;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    font-size: 2rem;
+  }
+}
+nav .dropdown .dropContent a:hover {
+  color: #e3d9c5;
+  font-weight: bolder;
+}
+@media (max-width: 500px) {
+  nav .dropdown .dropContent {
+    display: flex;
+    flex-direction: column;
+  }
+}
+nav .dropdown .button {
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background: #0e535e;
+  border: none;
+  color: #d9cbb0;
+  text-decoration: none;
+}
+nav .dropdown .button h1 {
+  font-size: 6rem;
+  color: #d9cbb0;
+  margin: 0px 0px;
+}
+nav .dropdown .button h1:hover {
+  color: #e3d9c5;
+  font-weight: bolder;
+}
+nav .dropdown .button img {
+  width: 10rem;
+  margin: 1rem;
+}
+@media (max-width: 500px) {
+  nav .dropdown .button img {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  nav .dropdown .button {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+.login {
+  display: flex;
+  justify-content: flex-end;
+}
+.login a {
+  display: flex;
+  justify-content: flex-end;
+  color: #d9cbb0;
+  font-family: "Eczar", serif;
+  font-size: 4rem;
+  text-decoration: none;
+}
+.login a:hover {
+  color: #e3d9c5;
+  font-weight: bolder;
+}
+@media (max-width: 500px) {
+  .login {
+    display: none;
+  }
 }

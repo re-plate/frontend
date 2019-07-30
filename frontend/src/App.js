@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import BusinessMember from "./components/BusinessMember";
+import Header from "../src/components/Header";
 
 function App() {
   const [businessMembers, setBusinessMembers] = useState([]);
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="form-group">
       <h1 className="form">Businesses/ Donors</h1>
+      <Header />
       <Form
         businessMembers={businessMembers}
         setBusinessMembers={setBusinessMembers}
