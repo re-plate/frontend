@@ -8,7 +8,7 @@ import table from './assets/table.jpg';
 import SavedList from './components/SavedList';
 import DummyRequestList from './components/DummyRequestList';
 import DummyRequest from './components/DummyRequest'
-import ShowList from './hooks/ShowList';
+ 
 
 function App() {
   const [volunteerArray, setVolunteerArray] = useState([
@@ -77,7 +77,7 @@ function App() {
        </div>
       )}
       <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
-      <Route path="/requests" exact render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
+      <Route path="/" exact render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
       <Route
         path ="/requests/:id"
         render={props => (
