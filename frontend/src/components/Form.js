@@ -17,16 +17,18 @@ const Form = props => {
           <input type="text" name="email" required />
           <label>Password</label>
           <input type="text" name="role" required />
-          <button className="signButton"> Sign Up </button>
+          <div className="signup">
+            <button className="signButton"> Sign Up </button>
+          </div>
         </form>
       </div>
 
+      <h1 className="title">To make edits: </h1>
       <div className="editContainer">
+        <input type="text" name="edit" />
         <button className="editButton" onClick={props.handleEdit}>
           Edit
         </button>
-        <label>To make edits: </label>
-        <input type="text" name="edit" />
       </div>
     </div>
   );

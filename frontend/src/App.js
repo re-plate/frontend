@@ -3,6 +3,24 @@ import "./App.css";
 import Form from "./components/Form";
 import BusinessMember from "./components/BusinessMember";
 import Header from "../src/components/Header";
+// import axios from "axios";
+
+// const Request = props => {
+//   const [request, setRequest] = useState({});
+//   useEffect(() => {
+//     const id = props.match.params.requestId;
+//     // change ^^^ that line and grab the id from the URL
+//     // You will NEED to add a dependency array to this effect hook
+
+//     axios
+//       .get(`http://localhost:5000/api/request/${request.id}`)
+//       .then(response => {
+//         setRequest(response.data);
+//       })
+//       .catch(error => {
+//         console.error(error);
+//       });
+//   }, []);
 
 function App() {
   const [businessMembers, setBusinessMembers] = useState([]);
@@ -40,37 +58,40 @@ function App() {
   console.log(businessMembers);
   // setBusinessMembers(newMember);
   return (
-    <div className="form-group">
+    <div>
       <Header />
-      <h1 className="title">Businesses/ Donors</h1>
-      <Form
-        businessMembers={businessMembers}
-        setBusinessMembers={setBusinessMembers}
-        updatedMember={updatedMember}
-        setUpdateMember={setUpdatedMember}
-        memberEdit={memberEdit}
-        setMemberEdit={setMemberEdit}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        handleEdit={handleEdit}
-      />
+
       <div className="form-group">
-        {businessMembers.map(member => {
-          return (
-            <BusinessMember
-              businessMembers={businessMembers}
-              setBusinessMembers={setBusinessMembers}
-              updatedMember={updatedMember}
-              setUpdateMember={setUpdatedMember}
-              memberEdit={memberEdit}
-              setMemberEdit={setMemberEdit}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              handleEdit={handleEdit}
-              // edit={setMemberEdit}
-            />
-          );
-        })}
+        <h1 className="title">Businesses/ Donors</h1>
+        <Form
+          businessMembers={businessMembers}
+          setBusinessMembers={setBusinessMembers}
+          updatedMember={updatedMember}
+          setUpdateMember={setUpdatedMember}
+          memberEdit={memberEdit}
+          setMemberEdit={setMemberEdit}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          handleEdit={handleEdit}
+        />
+        <div className="form-group">
+          {businessMembers.map(member => {
+            return (
+              <BusinessMember
+                businessMembers={businessMembers}
+                setBusinessMembers={setBusinessMembers}
+                updatedMember={updatedMember}
+                setUpdateMember={setUpdatedMember}
+                memberEdit={memberEdit}
+                setMemberEdit={setMemberEdit}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                handleEdit={handleEdit}
+                // edit={setMemberEdit}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
