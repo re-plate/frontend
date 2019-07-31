@@ -7,6 +7,22 @@ const DummyRequestList = ({showList}) => {
     {id: "2", title:"Help 2!",author: "Me",date:"7/30/2019",info:"this is a second test"},
   ]);
 
+  //Fake API call
+  // useEffect(() => {
+  //   const getMovies = () => {
+  //     axios
+  //       .get('API_goes_here')
+  //       .then(response => {
+  //         setMovies(response.data);
+  //       })
+  //       .catch(error => {
+  //         console.error('Server Error', error);
+  //       });
+  //   }
+    
+  //   getRequests();
+  // }, []);
+
 
   if(showList) {
     return (

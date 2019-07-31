@@ -7,13 +7,18 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background-color: #0E535E;
 }
 
 h1 {
   font-family: 'Eczar', serif;
   font-weight: 800;
-  color: #4B5B41;
+  color: #D9CBB0;
   margin-bottom: 0rem;
+}
+
+.container h1 {
+  color: #4B5B41;
 }
 
 .volunteerForm{
@@ -62,21 +67,29 @@ fieldset {
   flex-direction: column;
   align-items: center;
   background-color: #D9CBB0;
-  padding: 1.5rem;
   
 }
 
+.container a {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
 .volunteerCard {
-  width: 80%;
+  width: 90%;
   display: flex;
   text-align: center;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  margin: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   padding: 1.5rem;
+  margin: 5%;
 }
+
 
 .volunteerCard img {
   width: 20%;
@@ -99,3 +112,5 @@ fieldset {
 .hidden {
   visibility: hidden;
 }
+
+

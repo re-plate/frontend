@@ -5,6 +5,20 @@ const DummyRequest = (props) => {
         {id: "1",title:"Help!",author: "Me",date:"7/30/2019",info:"this is a test"},
     );
     
+    //Fake API call
+    // useEffect(() => {
+    //   const id = props.match.params.id;
+  
+    //      axios
+    //       .get(`API_goes_here/${id}`)
+    //       .then(response => {
+    //         setMovie(response.data);
+    //       })
+    //       .catch(error => {
+    //         console.error(error);
+    //       });
+  
+    // },[props.match.params.id]);
 
   const saveRequest = () => {
     const {addToSavedList} = props;

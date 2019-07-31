@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Image = styled.img`
     width: 10rem;
-    margin: 0 1.5rem;
+    margin: 1rem;
 `
 
 export const RequestButton = styled.button`

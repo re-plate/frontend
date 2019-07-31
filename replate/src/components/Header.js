@@ -1,12 +1,13 @@
 import React from 'react'
-import logoBlue from '../assets/logoBlue.png'
+import logoBeige from '../assets/logoBeige.png'
 import {Image, RequestButton} from "./StyledWidgets";
 
 const Header= () => {
 
     return (
+
         <div className = "header">
-            <Image src = {logoBlue}/>
+            <Image src = {logoBeige}/>
             <h1>Volunteer with Replate</h1>
             <RequestButton>View open requests</RequestButton>
         </div>
@@ -16,3 +17,7 @@ const Header= () => {
 }
 
 export default Header;
+
+
+
+

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import './App.css';
 import VolunteerForm from './components/VolunteerForm';
 import Header from './components/Header';
@@ -8,12 +8,14 @@ import table from './assets/table.jpg';
 import SavedList from './components/SavedList';
 import DummyRequestList from './components/DummyRequestList';
 import DummyRequest from './components/DummyRequest'
+import VolunteerCard from './components/VolunteerCard'
+import AppRouter from './components/AppRouter.js';
  
 
-function App() {
+function Volunteer() {
   const [volunteerArray, setVolunteerArray] = useState([
     {id: "1", name: "SpongeBob",email: "cook@krustykrab.com",requests: "...",imgUrl:"https://vignette.wikia.nocookie.net/spongebob/images/d/d7/SpongeBob_stock_art.png/revision/latest?cb=20190604110949"},
-    {id: "12", name: "Patrick",email: "thisispatrick@krustykrab.com",requests: "...",imgUrl:"https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/220px-Patrick_Star.svg.png"},]);
+    {id: "2", name: "Patrick",email: "thisispatrick@krustykrab.com",requests: "...",imgUrl:"https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/220px-Patrick_Star.svg.png"},]);
 
   const [idCount, setIdCount] = useState(2);
   const [volunteerToEdit, switchEditVolunteer] = useState();
@@ -64,18 +66,23 @@ function App() {
         />
       <div className = "container">   
         <h1>Meet our Volunteers</h1>
-      {volunteerArray.map((volunteer) =>
-        <div className = "volunteerCard">
-          <img src={volunteer.imgUrl}/>
-          <div className = "textContainer">
-            <h2>{volunteer.name}</h2>
-            <p>{volunteer.email}</p>
-            <p>{volunteer.requests}</p>
-            <SavedList list={savedList} /> 
-          </div>
-           <SubmitButton className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</SubmitButton>
-       </div>
-      )}
+      {volunteerArray.map(volunteer =>{
+        return(
+          <Link to = {`/volunteers/${volunteer.id}`}>
+          <div className = "volunteerCard">
+              <VolunteerCard 
+              volunteer = {volunteer}
+              name = {volunteer.name}
+              key = {volunteer.id}
+              email = {volunteer.email}
+              imgUrl = {volunteer.imgUrl}
+              requests = {volunteer.requests}/>
+              <SavedList list={savedList} /> 
+              <SubmitButton className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</SubmitButton>
+              </div>
+            </Link>
+
+      )})}
       <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
       <Route path="/" exact render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
       <Route
@@ -89,9 +96,10 @@ function App() {
         )}
         /> 
     </div>
+    <AppRouter />
     </div>
 
   ); 
 }
 
-export default App;
+export default Volunteer;
