@@ -1,12 +1,14 @@
 body {
-  background: #d9cbb0;
+  background-image: url(./food-img.jpg);
+  background-size: cover;
+  background-position: center;
 }
 .Header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 150%;
 }
 
 h1 {
@@ -16,6 +18,7 @@ h1 {
   margin-bottom: 0rem;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
 .form {
@@ -62,19 +65,15 @@ input {
   background: #d9cbb0;
   width: 50%;
   height: auto;
-  border: solid black;
+  padding-bottom: 10px;
+  border: 1px solid black;
 }
 
 .editContainer {
-  background: #d9cbb0;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  margin-left: 160px;
   padding-top: 50px;
-  height: 100px;
-  width: 500px;
-  height: auto;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .form-group {
@@ -110,6 +109,27 @@ input {
 }
 
 .editButton:hover {
+  background-color: white;
+  border-color: 0535ee;
+}
+
+.requestButton {
+  background-color: hsl(188, 74%, 21%);
+  font-family: "Eczar", serif;
+  padding-top: 10px;
+  border: none;
+  color: #d9cbb0;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.requestButton:hover {
   background-color: white;
   border-color: 0535ee;
 }
@@ -172,7 +192,7 @@ nav .dropdown .dropContent a:hover {
     flex-direction: column;
   }
 }
-nav .dropdown .button {
+nav .dropdown {
   border: 1px solid blue;
   display: flex;
   align-items: center;
@@ -182,16 +202,16 @@ nav .dropdown .button {
   color: #d9cbb0;
   text-decoration: none;
 }
-nav .dropdown .button h1 {
+nav .dropdown h1 {
   font-size: 6rem;
   color: #d9cbb0;
   margin: 0px 0px;
 }
-nav .dropdown .button h1:hover {
+nav .dropdown h1:hover {
   color: #e3d9c5;
   font-weight: bolder;
 }
-nav .dropdown .button img {
+nav .dropdow img {
   width: 10rem;
   margin: 1rem;
 }

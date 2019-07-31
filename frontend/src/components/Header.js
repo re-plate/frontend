@@ -16,7 +16,7 @@ const Header = () => {
           </div>
         </div>
         <div className="requests">
-          <button>Make a Request</button>
+          <button className="requestButton">Make a Request</button>
         </div>
       </div>
     </Navbar>
