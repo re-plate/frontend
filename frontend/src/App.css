@@ -10,6 +10,8 @@ h1 {
   font-weight: 800;
   color: #4b5b41;
   margin-bottom: 0rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form {
@@ -20,8 +22,7 @@ h1 {
   background-color: #d9cbb0;
   font-family: "Montserrat", sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: 1.5rem;
 }
 
