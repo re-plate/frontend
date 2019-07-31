@@ -1,7 +1,6 @@
 body {
   background-image: url(./food-img.jpg);
   background-size: cover;
-  background-position: center;
 }
 .Header {
   display: flex;
@@ -130,6 +129,27 @@ input {
 }
 
 .requestButton:hover {
+  background-color: white;
+  border-color: 0535ee;
+}
+
+.signButton {
+  background-color: hsl(188, 74%, 21%);
+  font-family: "Eczar", serif;
+  padding-top: 10px;
+  border: none;
+  color: #d9cbb0;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.signButton:hover {
   background-color: white;
   border-color: 0535ee;
 }

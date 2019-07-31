@@ -17,7 +17,7 @@ const Form = props => {
           <input type="text" name="email" required />
           <label>Password</label>
           <input type="text" name="role" required />
-          <button> Sign Up </button>
+          <button className="signButton"> Sign Up </button>
         </form>
       </div>
 
