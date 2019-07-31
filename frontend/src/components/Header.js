@@ -5,17 +5,19 @@ import "../App.css";
 const Header = () => {
   return (
     <Navbar>
-      <div className="dropdown">
-        <a href="index.html" className="button">
-          <h1>replate</h1>
-        </a>
-        <div className="dropContent">
-          <a href="#">Donate to Replate</a>
-          <a href="#">login</a>
+      <div className="Header">
+        <div className="dropdown">
+          <a href="index.html" className="button">
+            <h1>replate</h1>
+          </a>
+          <div className="dropContent">
+            <a href="#">Donate to Replate</a>
+            <a href="#">Login</a>
+          </div>
         </div>
-      </div>
-      <div className="requests">
-        <button>Requests</button>
+        <div className="requests">
+          <button>Make a Request</button>
+        </div>
       </div>
     </Navbar>
   );

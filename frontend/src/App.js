@@ -41,8 +41,8 @@ function App() {
   // setBusinessMembers(newMember);
   return (
     <div className="form-group">
-      <h1 className="form">Businesses/ Donors</h1>
       <Header />
+      <h1 className="title">Businesses/ Donors</h1>
       <Form
         businessMembers={businessMembers}
         setBusinessMembers={setBusinessMembers}
