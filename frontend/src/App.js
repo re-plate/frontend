@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import BusinessMember from "./components/BusinessMember";
-import Header from "../src/components/Header";
-import RequestList from "./components/RequestList";
-import Request from "./components/Request";
+import Header from "./components/Header";
+// import RequestList from "./components/RequestList";
+// import Request from "./components/Request";
 import SavedList from "./components/SavedList";
+
 // import axios from "axios";
 
 // const Request = props => {
@@ -31,11 +32,23 @@ function App() {
     name: "",
     email: ""
   });
+  // const [showList, setShowList] = useState(false);
+  // const toggleMode = e => {
+  //   e.preventDefault();
+  //   setShowList(!showList);
+  // };
   const [memberEdit, setMemberEdit] = useState("");
   let newMember = [
     // ...updatedMember,
     // [event.target.name]: event.target.value
   ];
+
+  const [savedList, setSavedList] = useState([]);
+
+  const addToSavedList = request => {
+    let matches = savedList.filter(req => req.id === request.id);
+    return matches[0] ? null : setSavedList([...savedList, request]);
+  };
 
   function handleChange(event) {
     // setTeamMembers(newMember);
