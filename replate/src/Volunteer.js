@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route, Link } from "react-router-dom";
 import './Volunteer.css';
 import VolunteerForm from './components/VolunteerForm';
-import Header from './components/Header';
+import VHeader from './components/VHeader';
 import {VolunteerImage, SubmitButton, RequestButton} from "./components/StyledWidgets";
 import table from './assets/table.jpg';
 import SavedList from './components/SavedList';
@@ -48,7 +48,7 @@ function Volunteer() {
   
   return (
     <div className = "Volunteer">
-      <Header />
+      <VHeader />
       <VolunteerImage src = {table} alt = "Photo by Ali Inay on Unsplash"/>
       <Link to = {`/`}><h1 className = "volunteerHeading">Volunteer with Replate</h1></Link>
       <VolunteerForm
@@ -61,7 +61,7 @@ function Volunteer() {
         editFalse={editFalse}
         />
       <div className = "container">   
-        <Link to={`/volunteers`}><RequestButton>Meet our Volunteers</RequestButton></Link>
+        <Link to={`/volunteer/volunteers`}><RequestButton>Meet our Volunteers</RequestButton></Link>
         <AppRouter volunteerArray = {volunteerArray} setEdit = {setEdit} switchEditVolunteer = {switchEditVolunteer}/>
         <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
         <Route path="/" render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
