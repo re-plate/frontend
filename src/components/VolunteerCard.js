@@ -32,7 +32,7 @@ const VolunteerCard = ({match, volunteerArray, imgUrl, name, email, requests, id
             <div className = "volunteerCard">
                 <img src={imgUrl}/>
                 <div className = "textContainer">
-                <Link to = {`/volunteers/${id}`}><h2>{name}</h2></Link>
+                <Link to = {`/volunteer/volunteers/${id}`}><h2>{name}</h2></Link>
                 <p>{email}</p>
                 <p>{requests}</p>
                 </div>
