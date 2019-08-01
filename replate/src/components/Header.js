@@ -9,7 +9,6 @@ const Header= () => {
         <div className = "header">
             <Image src = {logoBeige}/>
             <h1>Volunteer with Replate</h1>
-            <RequestButton>View open requests</RequestButton>
         </div>
         
     )

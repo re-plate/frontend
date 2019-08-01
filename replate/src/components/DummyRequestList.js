@@ -45,7 +45,9 @@ function RequestDetails({ request }) {
 
   return (
       <div className="request-card">
-        <Link to={`/requests/${request.id}`}><h2>{title}</h2></Link>
+        {/* <Link to={`/requests/${request.id}`}> */}
+          <h2>{title}</h2>
+          {/* </Link> */}
         <div className="request-author">
           Author: <em>{author}</em>
         </div>

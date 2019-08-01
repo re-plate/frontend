@@ -13,6 +13,8 @@ export const RequestButton = styled.button`
     font-size: 15px;
     padding: 1rem 1.5rem;
     margin: 0 1.5rem;
+    margin-top: 1.5rem;
+    width: 50%;
     &:hover {
         background: #4F8189;
       }

@@ -27,11 +27,6 @@ function Volunteer() {
       : setVolunteerArray([...volunteerArray, { ...volunteer, id: idCount }]);
   };
 
-  const editTrue = id => {
-    setEdit(true);
-    switchEditVolunteer(id);
-  };
-
   const editFalse = () => {
     setEdit(false);
     switchEditVolunteer(null);
@@ -65,38 +60,21 @@ function Volunteer() {
         editFalse={editFalse}
         />
       <div className = "container">   
-        <h1>Meet our Volunteers</h1>
-      {volunteerArray.map(volunteer =>{
-        return(
-          <Link to = {`/volunteers/${volunteer.id}`}>
-          <div className = "volunteerCard">
-              <VolunteerCard 
-              volunteer = {volunteer}
-              name = {volunteer.name}
-              key = {volunteer.id}
-              email = {volunteer.email}
-              imgUrl = {volunteer.imgUrl}
-              requests = {volunteer.requests}/>
-              <SavedList list={savedList} /> 
-              <SubmitButton className="editButton" onClick={() => editTrue(volunteer.id)}>Edit</SubmitButton>
-              </div>
-            </Link>
-
-      )})}
-      <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
-      <Route path="/" exact render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
-      <Route
-        path ="/requests/:id"
-        render={props => (
-          <DummyRequest 
-            {...props}
-            addToSavedList={addToSavedList}
-            list={savedList}
-          />
-        )}
+        <Link to={`/volunteers`}><RequestButton>Meet our Volunteers</RequestButton></Link>
+        <AppRouter volunteerArray = {volunteerArray}/>
+        <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
+        <Route path="/" render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
+        <Route
+          path ="/requests/:id"
+          render={props => (
+            <DummyRequest 
+              {...props}
+              addToSavedList={addToSavedList}
+              list={savedList}
+            />
+          )}
         /> 
     </div>
-    <AppRouter />
     </div>
 
   ); 

@@ -4,10 +4,19 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   background-color: #0E535E;
+}
+
+.header h1 {
+  font-family: 'Eczar', serif;
+  font-weight: 800;
+  color: #D9CBB0;
+  margin-bottom: 0rem;
+  text-align: center;
+  width: 70%;
 }
 
 h1 {
@@ -90,10 +99,24 @@ fieldset {
   margin: 5%;
 }
 
+.volunteerCard .volunteerCard {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.volunteerCard a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+}
+
 
 .volunteerCard img {
-  width: 20%;
+  width: 30%;
   height: auto;
+  margin-right: 2rem;
 }
 
 .volunteerCard .textContainer {
@@ -116,4 +139,5 @@ fieldset {
 a {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
