@@ -22,6 +22,7 @@ const Header = () => {
             <h1>replate</h1>
           </a>
           <div className="dropContent">
+            <a href="https://upbeat-bardeen-0fb94e.netlify.com">Home</a>
             <a href="#">Donate to Replate</a>
             <a href="#">Login</a>
           </div>
