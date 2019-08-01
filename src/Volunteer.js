@@ -50,7 +50,7 @@ function Volunteer() {
     <div className = "Volunteer">
       <VHeader />
       <VolunteerImage src = {table} alt = "Photo by Ali Inay on Unsplash"/>
-      <Link to = {`/`}><h1 className = "volunteerHeading">Volunteer with Replate</h1></Link>
+      <Link to = {`/volunteer`}><h1 className = "volunteerHeading">Volunteer with Replate</h1></Link>
       <VolunteerForm
         volunteers = {volunteerArray} 
         addToVolunteers={addToVolunteers}
