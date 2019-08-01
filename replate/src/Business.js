@@ -5,7 +5,7 @@ import BusinessMember from "./components/BusinessMember";
 import Header from "./components/Header";
 // import RequestList from "./components/RequestList";
 // import Request from "./components/Request";
-import SavedList from "./components/SavedList";
+// import SavedList from "./components/SavedList";
 
 // import axios from "axios";
 
@@ -26,7 +26,7 @@ import SavedList from "./components/SavedList";
 //       });
 //   }, []);
 
-function App() {
+function Business() {
   const [businessMembers, setBusinessMembers] = useState([]);
   const [updatedMember, setUpdatedMember] = useState({
     name: "",
@@ -113,4 +113,4 @@ function App() {
   );
 }
 
-export default App;
+export default Business;
