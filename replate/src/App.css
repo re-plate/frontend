@@ -30,6 +30,8 @@ h1 {
   color: #4B5B41;
 }
 
+
+
 .volunteerForm{
   position: absolute;
   top: 300px;
@@ -76,6 +78,7 @@ fieldset {
   flex-direction: column;
   align-items: center;
   background-color: #D9CBB0;
+  padding-bottom: 2rem;
   
 }
 
