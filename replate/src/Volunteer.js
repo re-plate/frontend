@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Link } from "react-router-dom";
-import './App.css';
+import './Volunteer.css';
 import VolunteerForm from './components/VolunteerForm';
 import Header from './components/Header';
 import {VolunteerImage, SubmitButton, RequestButton} from "./components/StyledWidgets";
@@ -8,7 +8,6 @@ import table from './assets/table.jpg';
 import SavedList from './components/SavedList';
 import DummyRequestList from './components/DummyRequestList';
 import DummyRequest from './components/DummyRequest'
-import VolunteerCard from './components/VolunteerCard'
 import AppRouter from './components/AppRouter.js';
  
 
