@@ -1,0 +1,162 @@
+.Volunteer {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: #0E535E;
+}
+
+
+.header a {
+  width: 70%;
+}
+
+.header a h1 {
+  font-family: 'Eczar', serif;
+  font-weight: 800;
+  color: #D9CBB0;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-left: 1rem;
+  width: 100%;
+  text-align: left;
+  font-size: 4rem;
+}
+
+h1 {
+  font-family: 'Eczar', serif;
+  font-weight: 800;
+  color: #D9CBB0;
+  margin-bottom: 0rem;
+}
+
+.container h1 {
+  color: #4B5B41;
+}
+
+.volunteerHeading {
+  position: absolute;
+  top: 180px;
+  color: #D9CBB0;
+  font-size: 3rem;
+  background-color: #0E535E;
+  width: 70%;
+  padding: 0 1.5rem;
+}
+
+.volunteerForm{
+  position: absolute;
+  top: 300px;
+  left: 13%;
+  width: 70%;
+  background-color: #D9CBB0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+label {
+  font-size: 15px;
+  text-align: left;
+  color: #000000;
+}
+
+legend {
+  font-size: 28px;
+  color: #4B5B41;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 4px;
+  max-width: 458px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #0E535E;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+fieldset {
+  width: 95%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D9CBB0;
+  padding-bottom: 2rem;
+  
+}
+
+.container a {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.volunteerCard {
+  width: 90%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1.5rem;
+  margin: 5%;
+}
+
+.volunteerCard .volunteerCard {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.volunteerCard a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.volunteerCard img {
+  width: 30%;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.volunteerCard .textContainer {
+  width: 50%;
+  text-align: left;
+  margin-left: 1.5rem;
+  
+}
+
+.editButton {
+  height: 4rem;
+  width: 20%;
+
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
