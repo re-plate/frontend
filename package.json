@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "node": "^12.7.0",
+    "react-router-dom": "^5.0.1",
+    "sass": "^1.22.9",
+    "styled-components": "^4.3.2"
+  }
+}
