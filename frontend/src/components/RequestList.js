@@ -6,14 +6,14 @@ const RequestList = ({ showList }) => {
     {
       id: "1",
       title: "Available",
-      author: "Me",
+      donor: "Me",
       date: "7/31/2019",
       info: "test"
     },
     {
       id: "2",
       title: "Leftovers",
-      author: "Me",
+      donor: "Me",
       date: "7/10/2019",
       info: "second test"
     }
@@ -33,18 +33,18 @@ const RequestList = ({ showList }) => {
 };
 
 function RequestDetails({ request }) {
-  const { title, author, date, info } = request;
+  const { title, donor, date, info } = request;
 
   return (
     <div className="rcard">
       <Link to={`/requests/${request.id}`}>
         <h2>{title}</h2>
       </Link>
-      <div className="rauthor">
-        Author: <em>{author}</em>
+      <div className="rdonor">
+        Donor: <em>{donor}</em>
       </div>
       <div className="rdate">
-        Date posted: <strong>{date}</strong>
+        Date: <strong>{date}</strong>
       </div>
     </div>
   );

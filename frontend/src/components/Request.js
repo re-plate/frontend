@@ -4,7 +4,7 @@ const Request = props => {
   const [request, setRequest] = useState({
     id: "1",
     title: "Available",
-    author: "Me",
+    donor: "Me",
     date: "7/31/2019",
     info: "test"
   });
@@ -14,13 +14,13 @@ const Request = props => {
     addToSavedList(request);
   };
 
-  const { title, author, date, info } = request;
+  const { title, donor, date, info } = request;
   return (
     <div className="save">
       <div className="rcard">
         <h2>{title}</h2>
-        <div className="rauthor">
-          Author: <em>{author}</em>
+        <div className="rdonor">
+          donor: <em>{donor}</em>
         </div>
         <div className="rdate">
           Date posted: <strong>{date}</strong>
