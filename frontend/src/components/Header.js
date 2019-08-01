@@ -1,6 +1,10 @@
 import React from "react";
 import { Navbar } from "./Styled";
 import "../App.css";
+import { Route } from "react-router-dom";
+import SavedList from "./components/SavedList";
+import RequestList from "./components/RequestList";
+import Request from "./components/Request";
 
 const Header = () => {
   return (
@@ -16,7 +20,20 @@ const Header = () => {
           </div>
         </div>
         <div className="requests">
-          <button className="requestButton">Make a Request</button>
+          <button className="requestButton" onClick={toggleMode}>Make a Request</button>
+          <Route
+          path="/"
+          exact
+          render={props => <RequestList {...props} showList={showList} />}
+        />
+        <Route
+          path="/requests/:id"
+          render={props => (
+            <Request
+              {...props}
+              addToSavedList={addToSavedList}
+              list={savedList}
+            /> 
         </div>
       </div>
     </Navbar>

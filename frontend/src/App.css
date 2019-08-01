@@ -90,7 +90,6 @@ input {
 .form-group {
   margin: 0 auto;
   height: auto;
-  border: 5px solid blue;
   width: 60%;
 }
 
@@ -164,7 +163,7 @@ input {
 .signup {
   display: flex;
   justify-content: center;
-  border: 2px solid blue;
+
   padding-top: 20px;
 }
 .signButton {
