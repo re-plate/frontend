@@ -3,10 +3,11 @@ import { Switch, Route} from 'react-router-dom';
 import VolunteerCard from './VolunteerCard'
 import VolunteerList from './VolunteerList'
 
-export default function AppRouter({volunteerArray}) {
+export default function AppRouter({volunteerArray, setEdit, switchEditVolunteer}) {
   return <div>
     <Switch>
-      <Route path ="/volunteers/:id" render = {props => <VolunteerCard {...props} volunteerArray = {volunteerArray}/>}/>
+      <Route path ="/volunteers/:id" render = {props => <VolunteerCard {...props} volunteerArray = {volunteerArray} 
+      setEdit = {setEdit} switchEditVolunteer = {switchEditVolunteer}/>}/>
       <Route path = "/volunteers" render = {props => <VolunteerList {...props} volunteerArray = {volunteerArray}/>}/>
     </Switch>
   </div>

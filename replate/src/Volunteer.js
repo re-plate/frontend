@@ -62,7 +62,7 @@ function Volunteer() {
         />
       <div className = "container">   
         <Link to={`/volunteers`}><RequestButton>Meet our Volunteers</RequestButton></Link>
-        <AppRouter volunteerArray = {volunteerArray}/>
+        <AppRouter volunteerArray = {volunteerArray} setEdit = {setEdit} switchEditVolunteer = {switchEditVolunteer}/>
         <RequestButton className="requestButton" onClick={toggleMode}>View open requests</RequestButton>
         <Route path="/" render = {props => <DummyRequestList {...props} showList = {showList}/> }/>
         <Route
