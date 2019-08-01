@@ -12,7 +12,7 @@ const DummyRequest = (props) => {
     //      axios
     //       .get(`API_goes_here/${id}`)
     //       .then(response => {
-    //         setMovie(response.data);
+    //         setRequest(response.data);
     //       })
     //       .catch(error => {
     //         console.error(error);

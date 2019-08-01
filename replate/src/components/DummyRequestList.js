@@ -9,11 +9,11 @@ const DummyRequestList = ({showList}) => {
 
   //Fake API call
   // useEffect(() => {
-  //   const getMovies = () => {
+  //   const getRequests = () => {
   //     axios
   //       .get('API_goes_here')
   //       .then(response => {
-  //         setMovies(response.data);
+  //         setRequests(response.data);
   //       })
   //       .catch(error => {
   //         console.error('Server Error', error);
