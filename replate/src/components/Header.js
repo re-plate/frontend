@@ -9,7 +9,8 @@ const Header= () => {
 
         <div className = "header">
             <Image src = {logoBeige}/>
-            <Link to = {`/`}><h1>Volunteer with Replate</h1></Link>
+            <a href ='https://upbeat-bardeen-0fb94e.netlify.com/'><h1>replate</h1></a>
+            
         </div>
         
     )
@@ -17,6 +18,10 @@ const Header= () => {
 }
 
 export default Header;
+
+
+
+
 
 
 

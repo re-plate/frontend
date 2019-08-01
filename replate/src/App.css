@@ -1,4 +1,4 @@
-.App {
+.Volunteer {
   text-align: center;
 }
 
@@ -20,7 +20,11 @@
   font-weight: 800;
   color: #D9CBB0;
   margin-bottom: 0rem;
-  text-align: center;
+  margin-top: 0rem;
+  margin-left: 1rem;
+  width: 100%;
+  text-align: left;
+  font-size: 4rem;
 }
 
 h1 {
@@ -34,12 +38,20 @@ h1 {
   color: #4B5B41;
 }
 
-
+.volunteerHeading {
+  position: absolute;
+  top: 180px;
+  color: #D9CBB0;
+  font-size: 3rem;
+  background-color: #0E535E;
+  width: 70%;
+  padding: 0 1.5rem;
+}
 
 .volunteerForm{
   position: absolute;
   top: 300px;
-  left: 15%;
+  left: 13%;
   width: 70%;
   background-color: #D9CBB0;
   font-family: 'Montserrat', sans-serif;
