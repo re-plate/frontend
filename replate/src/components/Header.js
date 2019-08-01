@@ -1,6 +1,7 @@
 import React from 'react'
 import logoBeige from '../assets/logoBeige.png'
-import {Image, RequestButton} from "./StyledWidgets";
+import {Image} from "./StyledWidgets";
+import {Link} from 'react-router-dom';
 
 const Header= () => {
 
@@ -8,7 +9,7 @@ const Header= () => {
 
         <div className = "header">
             <Image src = {logoBeige}/>
-            <h1>Volunteer with Replate</h1>
+            <Link to = {`/`}><h1>Volunteer with Replate</h1></Link>
         </div>
         
     )

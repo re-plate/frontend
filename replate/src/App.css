@@ -10,13 +10,17 @@
   background-color: #0E535E;
 }
 
-.header h1 {
+
+.header a {
+  width: 70%;
+}
+
+.header a h1 {
   font-family: 'Eczar', serif;
   font-weight: 800;
   color: #D9CBB0;
   margin-bottom: 0rem;
   text-align: center;
-  width: 70%;
 }
 
 h1 {
